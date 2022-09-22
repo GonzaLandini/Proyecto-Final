@@ -1,0 +1,31 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - {{ user.username }}/ Editar perfil</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+            <div class="contenedor-img-perfil">
+                <img class="img-perfil" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+            </div>
+        {% endif %}{{ user.username }} - Editar perfil
+        {% if imagen %}
+            <a class="btn-editarperfil" href="{% url 'agregaravatar' %}">Cambiar avatar</a>
+        {% else %}
+            <a class="btn-editarperfil" href="{% url 'agregaravatar' %}">Agregar avatar</a>
+        {% endif %}
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor-editar">
+        {% if mensaje %}
+            <h2 class="mensaje-alerta-izq">{{ mensaje }}</h2>
+        {% endif %}
+        <form class="form-editar" action="{% url 'editarperfil' %}" method="POST"> {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit" type="submit">Guardar cambios</button>
+            <a class="btn_volver" href="{% url 'perfil' %}">Volver</a>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Crear Blog</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+            <div class="contenedor-img-perfil">
+                <img class="img-perfil" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+            </div>
+        {% endif %}{{ user.username }} - Editar blog
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensaje %}
+        <h3 class="mensaje-alerta-medio">{{ mensaje }}</h3>
+    {% endif %}    
+    <div class="contenedor-crearblog" >
+        <form class="form-blog" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <input class="submitcrear" type="submit", value="Guardar cambios">
+        </form>
+        <a class="btn_volver" href="{% url 'listablog' %}">Cancelar</a>
+    </div>  
+{% endblock %}

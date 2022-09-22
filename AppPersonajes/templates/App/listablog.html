@@ -1,0 +1,28 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Blogs</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Lista de Blogs creados por los usuarios</h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensajecorrecto %}
+        <h2 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h2>
+    {% endif %}
+    <div class="contenedor-liblogs">
+        <a class="btn-crearblog" href="{% url 'crearblog' %}">Crear Blog</a>
+        <div class="liblogs">
+            {% for blog in listablog reversed %}
+                <div class="blogs">
+                    <a href="{% url 'blog' blog.id %}">{{ blog.fechapub }}, {{ blog.titulo }} --- Autor: {{ blog.username }}</a>
+                    {% if request.user.is_superuser %}
+                        <a class="editarblog" href="{% url 'editarblog' blog.id %}">Editar</a>
+                        <a class="borrarblog" href="{% url 'borrarblog' blog.id %}">Eliminar</a> Esta opcion no se puede deshacer.
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <a class="btn_volver" href="{% url 'inicio' %}">Volver</a>
+    </div>
+{% endblock %}

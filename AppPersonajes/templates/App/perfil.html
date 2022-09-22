@@ -1,0 +1,48 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - {{ user.username }}/ Perfil</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+        <div class="contenedor-img-perfil">
+            <img class="img-perfil" src="{{ imagen }}" alt="img-perfil">
+        </div>
+        {% endif %}{{ user.username }}
+            <div>
+                <div class="contenedor-editarperfil">
+                    <a class="btn-editarperfil" href="{% url 'editarperfil' %}">Editar perfil</a>
+                    {% if imagen %}
+                        <a class="btn-editarperfil" href="{% url 'agregaravatar' %}">Cambiar avatar</a>
+                    {% else %}
+                        <a class="btn-editarperfil" href="{% url 'agregaravatar' %}">Agregar avatar</a>
+                    {% endif %}
+                </div>
+                <a class="btn-crearblog" href="{% url 'crearblog' %}">Crear Blog</a>
+            </div>
+        {% if request.user.is_superuser %}
+            <a class="btn-editarperfil" target="_blank" href="http://127.0.0.1:8000/admin/">Panel administrador</a>
+        {% endif %}
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensajecorrecto %}
+        <h2 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h2>
+    {% endif %}
+    {% if mensajealerta %}
+        <h2 class="mensaje-alerta-izq">{{ mensajealerta }}</h2>
+    {% endif %}
+    <div class="contenedor-perfil">
+        <ul class="perfil-datos">
+            <li>Usuario: {{ user.username }} </li>
+            <li>e-mail: {{ user.email }} </li>
+            <li>Nombre: {{ user.first_name }} </li>
+            <li>Apellido: {{ user.last_name }} </li>
+        </ul>
+        <div class="perfil-mensajes">
+            <a class="btn-mensajes" href="{% url 'mensajes' %}">Enviar mensaje</a>
+            <a class="btn-mensajes" href="{% url 'mismensajes' %}">Mis mensajes</a>
+        </div>
+    </div>
+{% endblock %}

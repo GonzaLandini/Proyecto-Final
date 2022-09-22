@@ -1,0 +1,16 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Acerca de mí</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Acerca de Gonzalo Landini</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor-about">
+        <p class="aboutme">
+            Soy de Buenos Aires, Argentina, tengo 27 años y soy el creador de todo el sistema completo. Desde muy chico siempre me gustó y estuve interesado en el ámbito informático, ya sea desde videojuegos hasta software y hardware. Mi papá también fue programador, trabajo con el lenguaje COBOL. Supongo que todo suma y, debido a eso, también es que me gusta la informática. Al terminar el secundario opté por estudiar Ingenería en Sistemas, pero por situaciones personales dejé la carrera. Pasaron unos varios años hasta que haya decidido volver a estudiar en este campo y es ahí cuando empecé a estudiar en CoderHouse.<br><br>El proyecto surge por una vaga idea acerca de la Primer Entrega del Proyecto Final, es decir, es una continuación del mismo. Dado que la primer entrega no tenía en cuenta los detalles de ser estilo "Blog", el sistema se tuvo que amoldar a los requisitos de la entrega FINAL del proyecto. Es por este motivo que es probable que algunos contenidos no sean acordes a la idea final presentada.<br><br>Durante la realización del proyecto tuve varias dudas, aunque ninguna de ellas supuso gran dificultad y pude solucionar cada uno de los problemas leyendo la documentación correspondiente. En un principio pensé que la App de mensajería me iba a costar un buen rato, pero pude hacerla en menos de dos días y cuando la ví funcionando admito que generó esa sensación de bienestar al saber que las cosas se mostraban de manera correcta luego de probar varias veces. Tambien es satisfactorio ver cómo uno va aprendiendo de los errores que se van cometiendo a medida que se avanza, junto con el poder ir entendiendo cada vez más cómo funcionan ciertas cosas que en algún momento no me quedaban del todo claras.<br> Con el pasar de los pocos días en los cuales estuve trabajando en el final, entendí cuando se dice que la mayor parte del tiempo se la pasa leyendo codigo y tratando de entender cómo funciona todo. Una vez ya se empieza a comprender mucho más, se puede ir "jugando" y relacionando otras cosas mejorando el trabajo que incluso se hizo anteriormente.
+        </p>
+        <a class="btn_volver" href="{% url 'inicio' %}">Inicio</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Ubicaciones</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Ubicaciones</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenidoprincipal">
+        <a class="btn_crearprincipal" href="{% url 'ubicacionformulario' %}">CREAR UBICACIÓN</a> 
+        <p class="informacion">
+            Las <b>Ubicaciones</b> son aquellos lugares específicos creados por cada uno de los usuarios. Podrán ser seleccionados para utilizarse como lugar de aventura por los <b>Personajes Principales</b> y sus <b>Compañeros</b>.<br>
+            Para poder crear una Ubicación debemos asignarle una Región, una Aldea y un Siglo. Una vez hecho esto, crearemos la Ubicación apretando el botón <b>CREAR UBICACIÓN</b> y esta se guardará automáticamente en la base de datos. Cuando esté creada, si todo salió bien, nos aparecerá un cartel que indique que se creó de manera exitosa. Si vamos al apartado <b>BUSCAR, BUSCAR UBICACIONES</b> podremos escribir la Región de la Ubicación creada y aparecerán en pantalla todas aquellas que tengan la misma Región.<br><br>
+            <b>En caso de escribir mal la Región o que la Ubicación no exista, saldrá un mensaje que indique que no existe.</b>
+        </p>
+    </div>
+    <a class="btn_volver" href="{% url 'inicio' %}">Inicio</a>  
+{% endblock %}

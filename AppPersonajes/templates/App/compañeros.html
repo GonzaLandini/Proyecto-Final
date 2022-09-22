@@ -1,0 +1,19 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Compañeros</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Compañeros</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenidoprincipal">
+        <a class="btn_crearprincipal" href="{% url 'compañeroformulario' %}">CREAR COMPAÑERO</a>
+        <p class="informacion">
+            Los <b>compañeros</b> serán aquellos que ayudan al <b>Personaje Principal</b> en su aventura. Estos también tienen rasgos especiales, pero que el Personaje Principal no puede conseguir, por eso son muy importantes.<br>
+            Para poder crear un Compañero, al principio, nos pedirá que ingresemos un Nombre, un Género y una Raza. Una vez hecho esto, crearemos al Compañero apretando el botón <b>CREAR</b> y este se guardará automáticamente en la base de datos. Cuando esté creado, si todo salió bien, nos aparecerá un cartel que indique que se creó de manera exitosa. Si vamos al apartado <b>BUSCAR, BUSCAR COMPAÑEROS</b> podremos escribir el Nombre del Compañero creado y aparecerán en pantalla todos aquellos que tengan el mismo Nombre.<br><br>
+            <b>En caso de escribir mal el Nombre o que el Compañero no exista, saldrá un mensaje que indique que no existe.</b>
+        </p>
+    </div>
+    <a class="btn_volver" href="{% url 'inicio' %}">Inicio</a>
+{% endblock %}

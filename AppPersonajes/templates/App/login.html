@@ -1,0 +1,21 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Iniciar sesion</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Iniciar sesión</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor-login">
+        {% if mensaje %}
+            <h2 class="mensaje-alerta-medio">{{ mensaje }}</h2>
+        {% endif %}
+        <img class="img-login" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="login">
+        <form action="{% url 'login' %}"  method="POST"> {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit" type="submit">Iniciar sesion</button>
+            <p class="register-login">o <a href="{% url 'registrate' %}">Registrarse</a></p> 
+        </form>
+    </div>
+{% endblock %}

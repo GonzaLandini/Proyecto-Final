@@ -1,0 +1,24 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Blogs</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">{{ blog.titulo }},  {{blog.fechapub }} --- {{ blog.username }}</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor-blog">
+        {% if request.user.is_superuser %}
+            <a class="editarblog" href="{% url 'editarblog' blog.id %}">Editar blog</a>
+        {% endif %}
+        <div class="blog">
+            <h1>{{ blog.subtitulo }}</h1>
+            <p>{{ blog.texto|safe }}</p>
+            {% if blog.imagen %}
+                <img src="{{ blog.imagen.url }}" alt="img-blog" title="Imagen Blog de {{ blog.username }}">
+            {% endif %}
+            <h3>Autor: {{ blog.username }}</h3>
+        </div>
+        <a class="btn_volver" href="{% url 'listablog' %}">Más Blogs</a>
+    </div>
+{% endblock %}

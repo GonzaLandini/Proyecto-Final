@@ -1,0 +1,29 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - {{ user.username }}/ Avatar</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+            <div class="contenedor-img-perfil">
+                <img class="img-perfil" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+            </div>
+        {% endif %}{{ user.username }} - {% if imagen %} Cambiar avatar <a href="{% url 'borraravatar' %}" class="btn-delete" type="submit">Eliminar actual</a>{% else %} Agregar avatar {% endif %}
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor-avatar">
+        {% if mensajealerta %}
+            <h2 class="mensaje-alerta-izq">{{ mensajealerta }}</h2>
+        {% endif %}
+        {% if mensajecorrecto %}
+            <h2 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h2>
+        {% endif %}
+        <form class="avatar" action="{% url 'agregaravatar' %}"  method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            {{ formavatar.as_p }}
+            <button class="submit" type="submit">Agregar</button>
+            <a class="btn_volver" href="{% url 'perfil' %}">Volver</a>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link href= "{% static '\App\css\style.css' %}" rel="stylesheet" />
+        <link href="{% static '\App\css\normalize.css' %}" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block titulo %}
+        <title>Final</title>
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Barra de navegación-->
+        <header>
+            <a class="btn_inicio" href="{% url 'inicio' %}">INICIO</a>
+            <nav class="barra_nav">
+                <ul>
+                    <li><a class="btn_ref" href="{% url 'personajes' %}">PERSONAJES</a></li>
+                    <li><a class="btn_ref" href="{% url 'compañeros' %}">COMPAÑEROS</a></li>
+                    <li><a class="btn_ref" href="{% url 'ubicaciones' %}">UBICACIONES</a></li>
+                    <li><a class="btn_ref" href="{% url 'listablog' %}">BLOGS</a></li>
+                    <li><a class="btn_ref" href="{% url 'busqueda' %}">BUSCAR</a></li>
+                    {% if not request.user.is_authenticated %}
+                        <li><a class="btn_ref register" href="{% url 'registrate' %}">REGISTRATE</a></li>
+                        <li><a class="btn_ref login" href="{% url 'login' %}">INICIAR SESION</a></li>
+                    {% else %}
+                        <li><a class="btn_ref" href="{% url 'perfil' %}">
+                            {% if imagen %}
+                                <img class="img-nav" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+                            {% endif %}{{ user.username }}
+                        </a></li>
+                        <li><a class="btn_ref logout" href="{% url 'logout' %}">CERRAR SESION</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <!--Titulo Principal-->
+            {% block titulo_de_pagina %} {%endblock %}
+        <!--Contenido variable entre templates-->
+            {% block contenido_variable %} {% endblock %}
+        <!--Links Datos personales-->
+        <footer class="mis_datos">
+            <a class="btn_links" target="_blank" href="https://www.instagram.com/gonnzad/">Instagram</a>
+            <a class="btn_links" target="_blank" href="https://github.com/GonzaLandini">GitHub</a>
+            <a class="btn_links" target="_blank" href="https://plataforma.coderhouse.com/perfil/627a75c68d262f0018d3725f">CoderHouse</a>
+            <a class="btn_links" href="{% url 'aboutme' %}">Acerca de mí</a>
+        </footer>
+    </body>
+</html>

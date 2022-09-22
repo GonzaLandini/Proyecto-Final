@@ -1,0 +1,19 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Personajes</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Personajes</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenidoprincipal">
+        <a class="btn_crearprincipal" href="{% url 'personajeformulario' %}">CREAR PERSONAJE</a>
+        <p class="informacion">
+            Los <b>Personajes Principales</b> son los que tendrán que transitar toda la historia que se presente. Tendrán el privilegio de poder ser acompañados por un <b>Compañero</b> si así lo desean, aunque es muy recomendable que lo hagan. De todas formas, cuentan con poderes y/o habilidades destacables que también lo ayudarán a poder avanzar y progresar por cualquiera de las <b>Ubicaciones</b> presentadas.<br>
+            Para crear un Personaje Principal tendremos que ingresar un Nombre, un Género, una Raza, una Altura y un Peso. Una vez hecho esto, crearemos al Personaje Principal apretando el botón <b>CREAR</b> y este se guardará automáticamente en la base de datos. Cuando esté creado, si todo salió bien, nos aparecerá un cartel que indique que se creó de manera exitosa. Si vamos al apartado <b>BUSCAR, BUSCAR PERSONAJES</b> podremos escribir el Nombre del Personaje Principal creado y aparecerán en pantalla todos aquellos que tengan el mismo Nombre.<br><br>
+            <b>En caso de escribir mal el Nombre o que el Personaje Principal no exista, saldrá un mensaje que indique que no existe.</b>
+        </p>
+    </div>
+    <a class="btn_volver" href="{% url 'inicio' %}">Inicio</a>  
+{% endblock %}

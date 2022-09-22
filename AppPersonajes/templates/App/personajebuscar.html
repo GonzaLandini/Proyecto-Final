@@ -1,0 +1,18 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Buscar personaje</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Escribí el nombre del personaje que quieras buscar</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <form class="contenido_formbuscar" action="{% url 'resultadobusquedapersonaje' %}", method="GET"> {% csrf_token %}
+        <input class="rellenoform" placeholder="Escribir nombre" type="text", name="nombre", id="nombre">
+        <input class="submit" type="submit", value="Buscar">
+    </form>
+    {% if mensaje %}
+        <h3 class="mensaje-alerta-izq">{{ mensaje }}</h3>
+    {% endif %}
+    <a class="btn_volver" href="{% url 'busqueda' %}">Volver a Buscar</a>
+{% endblock %}

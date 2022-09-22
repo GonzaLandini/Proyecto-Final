@@ -1,0 +1,20 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Resultados búsqueda</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Personajes</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor_resultados">
+        <h2 class="tituloform">Resultado de Personajes</h2>
+        <ol class="listaresultados">
+            {% for nombre in nombres %}
+                <li><h3 class="resultados">{{ nombre.nombre }}</h3></li>
+            {% endfor %}
+        </ol>
+        <a class="btn_crearresultados" href="{% url 'personajeformulario' %}">CREAR NUEVO PERSONAJE</a>
+    </div>
+    <a class="btn_volver" href="{% url 'busqueda' %}">Volver a Buscar</a>
+{% endblock %}

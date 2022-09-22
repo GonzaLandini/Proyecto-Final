@@ -1,0 +1,20 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Crear compañero</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Creá tu compañero</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor_form" >
+        <h2 class="tituloform">Llená los siguientes espacios:</h2>
+        <form class="formularios" action="{% url 'compañeroformulario' %}", method="POST"> {% csrf_token %}
+            <table>
+                {{ formulario.as_table }}
+            </table>
+            <input class="submitcrear" type="submit", value="CREAR COMPAÑERO">
+        </form>
+    </div>
+    <a class="btn_volver" href="{% url 'crear' %}">Volver a Crear</a> 
+{% endblock %}

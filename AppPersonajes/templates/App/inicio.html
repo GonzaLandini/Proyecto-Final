@@ -1,0 +1,32 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenido_variable %}
+    <div class="contenedor_inicio">
+        {% if mensajecorrecto %}
+            <h2 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h2>
+        {% endif %}
+        <h1 class="titulo_inicio">
+            <p class="p1">Creación de Personajes, Compañeros y Ubicaciones</p><br>
+            <p class="p2">Buscá lo que quieras</p><br>
+            <p class="p3">Iniciá sesión y compartí tus Blogs con otros usuarios</p>
+        </h1>
+        <a class="btn_crear" href="{% url 'crear' %}">COMENZAR </a>
+    </div>
+    <div class="last3">Ultimos Blogs creados...</div>
+    <section class="section-blogs">
+        {% for blog in blogs reversed %}
+            <a class="cada-blog" href="{% url 'blog' blog.id %}" title="Leer más">
+                <h3>{{ blog.titulo }}, {{ blog.fechapub }}</h3>
+                <h4>{{ blog.subtitulo }}</h4>
+                {% if blog.imagen %}
+                    <img src="{{ blog.imagen.url }}" alt="img-blog" title="Imagen Blog de {{ blog.username }}">
+                {% else %}
+                    <p class="blog-texto">{{ blog.texto|safe }}</p>
+                {% endif %}
+                <h4>Autor: {{ blog.username }}</h4>
+            </a>
+        {% endfor %}
+    </section>
+    <a class="btn-listablog" href="{% url 'listablog' %}">Ver todos los Blogs</a>
+{% endblock %}
+

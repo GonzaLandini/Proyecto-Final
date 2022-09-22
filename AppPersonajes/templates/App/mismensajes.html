@@ -1,0 +1,28 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Mis mensajes</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+            <div class="contenedor-img-perfil">
+                <img class="img-perfil" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+            </div>
+        {% endif %}{{ user.username }} - Mis mensajes
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensajecorrecto %}
+        <h2 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h2>
+    {% endif %}
+    <div class="contenedor-mismensajes">
+        <a class="btn-mensajes" href="{% url 'mensajes' %}">Enviar nuevo mensaje</a>
+        <div class="li-mensajes">
+            {% for mensaje in mensajes reversed %}
+                <li>- De: {{ mensaje.emisor }}, <p>"{{ mensaje.mensaje }}"<a href="{% url 'borrarmensaje' mensaje.id %}" class="btn-delete" type="submit">Borrar</a></p></li>
+            {% endfor %}
+        </div>
+        <a class="btn_volver" href="{% url 'perfil' %}">Volver</a>
+    </div>
+{% endblock %}

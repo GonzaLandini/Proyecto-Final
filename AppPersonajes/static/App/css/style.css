@@ -1,0 +1,1041 @@
+* {
+    color: #fff;
+    text-decoration: none;
+}
+body {
+    background-color: #012;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+*::selection {
+    background-color: #07f;
+    color: #fff;
+}
+/* Barra de navegacion */
+header {
+    background-color: #123e;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+}
+.titulotemplates {
+    align-items: center;
+    background-color: #037;
+    color:#fff;
+    display: flex;
+    font-size: 2.5em;
+    height: 200px;
+    margin: 50px 0 10px 0;
+    min-width: max-content;
+    padding: 0 5%;
+    width: 100%;
+}
+.btn_inicio {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: auto;
+    margin-left: 10%;
+    transition: .3s;
+}
+.btn_inicio:hover {
+    color: #aad;
+}
+.barra_nav {
+    margin: auto;
+    margin-right: 2.5%;
+}
+.barra_nav ul {
+    display: flex;
+    list-style: none;
+}
+.barra_nav li{
+    margin: auto;
+}
+.img-nav {
+    border-radius: 100%;
+    height: 30px;
+    margin-right: 5px;
+    object-fit:cover;
+    width: 30px;
+}
+.btn_ref {
+    align-items: center;
+    display: flex;
+    color: #aad;
+    margin: 0 15px;
+    min-width: max-content;
+    transition: .3s;
+}
+.btn_ref:hover {
+    color: #fff;
+}
+.btn_ref:active {
+    color: #88a;
+    transition: 0s;
+}
+/* Pie de pagina */
+.mis_datos {
+    background-color: #fff;
+    bottom: 0px; 
+    color: #112;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.btn_links {
+    color: #112;
+    margin: auto 1%;
+}
+.btn_links:hover {
+    color: #112;
+    font-weight: bold;
+}
+.btn_links:active {
+    font-weight: inherit;
+}
+/* Boton "Volver" general */
+.btn_volver {
+    background-color: #58a;
+    border-radius: 35px;
+    color: #eef;
+    display: flex;
+    font-size: 1.2em;
+    margin: 20px auto;
+    padding: 10px 40px;
+    transition: .3s;
+    width: max-content;
+}
+.btn_volver:hover {
+    background-color: #eef;
+    color: #059;
+}
+.btn_volver:active {
+    background-color: #059;
+    color: #eef;
+    transition: 0s;
+}
+.form-editar .btn_volver {
+    margin: 10px 35% 0;
+}
+.avatar .btn_volver {
+    margin: 10px 35% 0;
+}
+/* Template "inicio" */
+.contenedor_inicio {
+    display: block;
+    height: 92vh;
+    margin-top: 40px;
+    width: 100%;
+}
+.titulo_inicio {
+    font-size: 2.6em;
+    margin: 16vh 0 5vh;
+    text-align: center;
+    width: 100%;
+}
+.titulo_inicio p {
+    display: inline-block;
+    margin: 0;
+    padding: 1vh 0;
+}
+.btn_crear {
+    background-color: #037;
+    border: solid #037;
+    border-radius: 60px;
+    display: flex;
+    font-size: 3em;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 2px;
+    margin:0 37%;
+    min-width: max-content;
+    padding: 40px;
+    transition: 1s;
+}
+.btn_crear:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #037;
+}
+.last3 {
+    background-color: #037;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 30px 0 0 5%;
+    width: 100%;
+}
+.section-blogs {
+    align-items: flex-end;
+    background-color: #037;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    height: 100%;
+    justify-content: space-evenly;
+    padding: 30px 50px;
+    width: 100%;
+}
+.cada-blog {
+    background-color: #eef;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 40px;
+    height: 175px;
+    margin: 10px;
+    min-width: 560px;
+    overflow: hidden;
+    width: 32%;
+}
+.cada-blog:hover {
+    background-color: #efa;
+}
+.cada-blog * {
+    color: #112;
+    margin: 3px 0;
+}
+.blog-texto {
+    display: inline-block;
+}
+.cada-blog img {
+    margin: auto;
+    object-fit: scale-down;
+}
+.btn-listablog {
+    background: linear-gradient(to top, #123, #037);
+    border-radius: 0 0 20px 20px;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto 50px;
+    padding: 10px 40px;
+    text-align: center;
+    width: max-content;
+}
+.btn-listablog:hover {
+    background: linear-gradient(to top, #353, #037);
+    transform: scaley(10px 10px);
+}
+/* Template "login" */
+.contenedor-login {
+    align-items: center;
+    background: #024;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.img-login {
+    border-radius: 100%;
+    margin: 20px 0 10px;
+    width: 200px;
+}
+.contenedor-login form {
+    margin: 5px;
+    text-align: right;
+    width: max-content;
+}
+.contenedor-login form ul {
+    display: none;
+}
+.contenedor-login p {
+    margin: 10px 0;
+}
+.contenedor-login input {
+    color: #112;
+    padding: 5px;
+}
+.contenedor-login .submit {
+    margin: auto;
+    width: 100%;
+}
+.register-login {
+    text-align: center;
+}
+.register-login a {
+    color: #aad;
+    text-decoration: underline;
+}
+.register-login a:hover {
+    color: #fff;
+}
+.mensaje-alerta-medio {
+    background-color: #f33;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+/* Template "registrate" */
+.contenedor-registro {
+    background: #024;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.form-registro {
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 10px 30px;
+    width: 500px;
+}
+.form-registro .form p {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.form-registro .form label {
+    display: inline-block;
+    width: max-content;
+}
+.form-registro .form input {
+    color: #112;
+    display: inline-block;
+    margin: 5px 0 5px 10px;
+    padding: 5px 5px;
+    width: 61%;
+}
+.form-registro ul {
+    display: none;
+}
+.form-registro .register-login {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+.form-registro .submit {
+    margin: 10px 0;
+    width: 100%;
+}
+.contenedor-info-registro {
+    box-sizing: border-box;
+    border: none;
+    border-left: solid 2px #aad;
+    font-size: .9em;
+    margin: 10px 0;
+    padding: 10px 30px;
+    text-align: justify;
+    width: 450px;
+}
+.contenedor-info-registro a {
+    color: #aad;
+}
+.contenedor-info-registro a:hover {
+    color: #fff;
+}
+.contenedor-info-registro a:active {
+    color: #aad;
+}
+/* Template "perfil" */
+.contenedor-img-perfil {
+    display: flex;
+    height: 170px;
+    margin-right: 20px;
+    width: 170px;
+}
+.img-perfil {
+    border-radius: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    width: 100%;
+}
+.contenedor-editarperfil {
+    margin: 10px 0;
+}
+.titulotemplates .btn-crearblog {
+    background-color: #07c;
+    border: solid #07c;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    font-size: .5em;
+    font-weight: bold;
+    margin: 15px auto 15px 20px;
+    padding: 10px 0;
+    text-align: center;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+}
+.titulotemplates .btn-crearblog:hover {
+    background-color: #19f;
+    border-color: #19f;
+}
+.titulotemplates .btn-crearblog:active {
+    background-color: #059;
+    border-color: #059;
+    transition: 0s;
+}
+.btn-editarperfil {
+    background-color: #da3;
+    border: solid #da3;
+    border-radius: 35px;
+    display: inline-block;
+    font-size: .5em;
+    font-weight: bold;
+    margin-left: 20px;
+    min-width: max-content;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+}
+.btn-editarperfil:hover {
+    background-color: #fb5;
+    border-color: #fb5;
+}
+.btn-editarperfil:active {
+    background-color: #c81;
+    border-color: #c81;
+    transition: 0s;
+}
+.mensaje-correcto-medio {
+    background-color: #283;
+    padding: 10px 0;
+    text-align: center;
+}
+.mensaje-alerta-izq {
+    background-color: #f33;
+    padding: 10px 5%;
+    width: 100%;
+}
+.contenedor-perfil {
+    background: #024;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.perfil-mensajes {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 5%;
+    width: max-content;
+}
+.btn-mensajes {
+    background-color: #07c;
+    border: solid #07c;
+    border-radius: 35px;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-width: max-content;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-align: center;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+    width: max-content;
+}
+.btn-mensajes:hover {
+    background-color: #19f;
+    border: solid #19f;
+}
+.btn-mensajes:active {
+    background-color: #059;
+    border: solid #059;
+    transition: 0s;
+}
+.perfil-datos {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 5px 6%;
+    width: max-content;
+}
+.perfil-datos li {
+    background-color: #037;
+    border-radius: 25px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    width: max-content;
+}
+/* Template "editarperfil" */
+.contenedor-editar {
+    background: #024;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.form-editar {
+    margin: 10px 5%;
+    text-align: right;
+    width: max-content;
+}
+.form-editar ul {
+    display: none;
+}
+.form-editar p {
+    margin: 10px 0;
+}
+.form-editar input {
+    color: #112;
+    padding: 5px;
+}
+.form-editar .submit {
+    margin: auto;
+    width: 100%;
+}
+/* Template "agregaravatar" */
+.titulotemplates .btn-delete {
+    font-size: .6em;
+    padding: 10px 20px;
+}
+.contenedor-avatar {
+    background-color: #024;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.avatar {
+    margin: 10px 5%;
+    width: 450px;
+}
+.avatar input {
+    background: none;
+    background-color: #024;
+    margin: 10px;
+}
+.avatar .errorlist {
+    display: none;
+}
+.avatar .submit {
+    margin: auto;
+    width: 100%;
+}
+/* Template "crear" */
+.contenedor_crear {
+    margin-bottom: 40px;
+    width: 100%;
+}
+.lista_crear {
+    background-color: #024;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    margin: auto;
+}
+.btn_creaciones {
+    font-family: fantasy, sans-serif;
+    font-size: 2.2em;
+    letter-spacing: 5px;
+    margin: auto 5%;
+    padding: 5px 0;
+    text-align: center;
+    transition: .2s;
+}
+.btn_creaciones:hover{
+    background-color: #fff;
+    color: #037;
+    padding: 5px 100px;
+}
+/* Template "busqueda" */
+.contenedor-listabusqueda {
+    margin-bottom: 40px;
+    width: 100%;
+}
+.lista_busqueda {
+    background-color: #024;
+}
+.btn_busquedas {
+    border-radius: 35px;
+    color: #fff;
+    display: block;
+    font-size: 1.3em;
+    left: -35px;
+    padding: 20px 85px;
+    position: relative;
+    width: 555px;
+    transition: .3s;
+}
+.btn_busquedas:hover {
+    background-color:#fff;
+    color: #037;
+    font-weight: bold;
+}
+.btn_busquedas:active {
+    background-color:#58a;
+    border-radius: 35px;
+    color: #fff;
+    transition: 0s;
+}
+/* Template "compañerobuscar", "personajebuscar", "ubicacionbuscar" */
+.contenido_formbuscar {
+    background-color: #024;
+    display: flex;
+    justify-content: left;
+    padding: 20px 0;
+    width: 100%;
+}
+.rellenoform {
+    border: none;
+    color: #112;
+    margin-left: 5%;
+    padding: 5px 15px;
+    width: 280px;
+}
+.submit {
+    background-color: #07c;
+    border: solid #07c;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 2%;
+    padding: 10px 20px;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+}
+.submit:hover {
+    background-color: #19f;
+    border-color: #19f;
+}
+.submit:active {
+    background-color: #059;
+    border-color: #059;
+    transition: 0s;
+}
+/* Template "compañeroformulario", "personajeformulario", "ubicacionformulario" */
+.contenedor_form {
+    background-color: #024;
+    display: block;
+    width: 100%;
+}
+.tituloform {
+    padding: 15px 5%;
+}
+.formularios {
+    margin: 0 5%;
+    text-align: left;
+    width: 350px;
+}
+table {
+    margin-left: 15px;
+}
+tr td input{
+    border: none;
+    color: #112;
+    margin: 2px 0;
+    padding: 5px;
+    outline: none;
+    width: 245px;
+}
+.contenedor_form .submitcrear {
+    background-color: #283;
+    border: solid #283;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px 0 15px 0;
+    padding: 10px;
+    width: 100%;
+    transition: .3s;
+}
+.contenedor_form .submitcrear:hover {
+    background-color: #2a4;
+    border-color: #2a4;
+}
+.contenedor_form .submitcrear:active {
+    background-color: #283;
+    border-color: #283;
+    color: #ccc;
+    transition: 0s;
+}
+/* Template "Compañeros", "Personajes", "Ubicaciones" */
+.contenidoprincipal {
+    background-color: #024;
+    display: flex;
+    width: 100%;
+}
+.btn_crearprincipal {
+    background-color: #037;
+    border: solid #037;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: auto;
+    margin-left: 5%;
+    padding: 30px;
+    text-align: center;
+    transition: .5s;
+    width: 100%;
+}
+.btn_crearprincipal:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #037;
+}
+.informacion {
+    background-color: #fff;
+    border-radius: 35px;
+    color: #037;
+    font-size: 1.1em;
+    margin: 15px 20% 15px 5%;
+    padding: 30px;
+    text-align: justify;
+}
+.informacion *{
+    color: #037;
+}
+/* Template "resultadobusqueda..." */
+.contenedor_resultados {
+    background-color: #024;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.listaresultados {
+    margin-left: 5%;
+    width: max-content;
+}
+.resultados {
+    background-color: #fff;
+    border-radius: 35px;
+    color: #112;
+    font-size: 1em;
+    font-weight:100;
+    margin: 10px 0;
+    padding: 5px 20px;
+    width: 100%;
+}
+.btn_crearresultados {
+    background-color: #037;
+    border: 10px solid #037;
+    border-radius: 60px;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 10px 0 20px 5%;
+    min-width: max-content;
+    padding: 20px 25px;
+    text-align: center;
+    transition: .5s;
+    width: max-content;
+}
+.btn_crearresultados:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #037;
+}
+/* Template "about" */
+.contenedor-about {
+    background-color: #024;
+    width: 100%;
+}
+.aboutme {
+    background-color: #fff;
+    border-radius: 35px;
+    color: #037;
+    font-size: 1.2em;
+    margin: 20px 5%;
+    padding: 30px;
+    text-align: justify;
+}
+/* Template "crearblog" */
+.contenedor-crearblog {
+    background-color: #024;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.form-blog {
+    background-color: #037;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px auto;
+    width: max-content;
+}
+.form-blog ul {
+    display: none;
+}
+.form-blog p {
+    margin: 10px 0;
+    width: 100%;
+}
+.form-blog p label {
+    display: inline-block;
+    width: max-content;
+}
+.form-blog p input {
+    color: #112;
+    display: block;
+    padding: 5px 5px;
+    width: 100%;
+}
+.form-blog p select {
+    color: #112;
+    margin-right: 5px;
+    padding: 5px;
+}
+.form-blog p select option {
+    color: #112;
+}
+.form-blog p #id_imagen {
+    color: #fff;
+}
+.contenedor-crearblog .submitcrear {
+    background-color: #07c;
+    border: solid #07c;
+    border-radius: 35px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 10px;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+    width: 100%;
+}
+.submitcrear:hover {
+    background-color: #19f;
+    border-color: #19f;
+}
+.submitcrear:active {
+    background-color: #059;
+    border-color: #059;
+    color: #ccc;
+    transition: 0s;
+}
+.contenedor-crearblog .btn_volver {
+    margin: 20px auto;
+    padding: 10px 30px;
+    width: max-content;
+}
+/* Template "mensajes" */
+.contenedor-mensajes {
+    background-color: #024;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.form-mensajes {
+    background-color: #037;
+    border-radius: 20px;
+    margin: 10px 10%;
+    padding: 10px 20px;
+    width: max-content;
+}
+.form-mensajes ul {
+    display: none;
+}
+.form-mensajes p {
+    align-items: flex-start;
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
+.form-mensajes p label {
+    margin: 5px 10px 10px 0;
+    width: 60px;
+} 
+.form-mensajes p select, option{
+    color: #112;
+    padding: 10px 20px;
+    text-align: center;
+    width: 84%;
+}
+.form-mensajes textarea {
+    background: linear-gradient(to bottom, #fff, #fff, #acf);
+    color: #112;
+    height: 42px;
+    max-height: 200px;
+    min-height: 40px;
+    padding: 10px;
+    resize: vertical;
+    width: 100%;
+}
+.form-mensajes .submit {
+    margin: 5px auto;
+    width: 100%;
+}
+.contenedor-mensajes .btn_volver {
+    margin: 5px auto 0;
+}
+/* Template "mismensajes" */
+.contenedor-mismensajes {
+    background-color: #024;
+    margin-bottom: 40px;
+    padding: 10px 5%;
+    width: 100%;
+}
+.contenedor-mismensajes .btn-mensajes {
+    display: inline-block;
+    width: max-content;
+}
+.li-mensajes {
+    list-style: none;
+    margin: 20px;
+}
+.li-mensajes li {
+    margin: 10px 0;
+}
+.li-mensajes p {
+    display: inline-block;
+    word-break: break-all;
+}
+.btn-delete {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #f33;
+    border: none;
+    border-radius: 30px;
+    margin: 0 0 0 15px;
+    padding: 5px 15px;
+}
+.btn-delete:hover {
+    background-color: #d11;
+}
+.btn-delete:active {
+    background-color: #a11;
+    color: #ccc;
+}
+.contenedor-mismensajes .btn_volver {
+    margin: 0;
+}
+/* Template "listablog" */
+.contenedor-liblogs {
+    background-color: #024;
+    margin-bottom: 40px;
+    padding: 10px 5%;
+    width: 100%;
+}
+.contenedor-liblogs .btn-crearblog {
+    background-color: #07c;
+    border: solid #07c;
+    border-radius: 35px;
+    cursor: pointer;
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-shadow: 1px 1px 5px #112f;
+    transition: .3s;
+    width: max-content;
+}
+.contenedor-liblogs .btn-crearblog:hover {
+    background-color: #19f;
+    border-color: #19f;
+}
+.contenedor-liblogs .btn-crearblog:active {
+    background-color: #059;
+    border-color: #059;
+    transition: 0s;
+}
+.liblogs {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.blogs .editarblog {
+    background-color: #da3;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 0 0 10px;
+    padding: 10px 20px;
+}
+.blogs .editarblog:hover{
+    background-color: #fff;
+    color: #c81;
+}
+.blogs .editarblog:active{
+    background-color: #c81;
+    color: #fff;
+}
+.blogs .borrarblog {
+    background-color: #f33;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    padding: 10px 20px;
+}
+.blogs .borrarblog:hover{
+    background-color: #d11;
+    color: #fff;
+}
+.blogs .borrarblog:active {
+    background-color: #a11;
+    color: #ccc;
+}
+.liblogs a {
+    background-color: #037;
+    border-radius: 35px;
+    display: inline-block;
+    margin: 10px 0;
+    padding: 15px 20px;
+    transition: .2s;
+}
+.liblogs a:hover {
+    background-color: #eef;
+    color: #112;
+}
+.contenedor-liblogs .btn_volver {
+    margin: 10px 0 0;
+    padding: 10px 30px;
+    width: max-content;
+}
+/* Template "blog" */
+.contenedor-blog {
+    background-color: #024;
+    margin-bottom: 40px;
+    padding: 20px 5%;
+    width: 100%
+}
+.contenedor-blog .editarblog {
+    background-color: #da3;
+    border-radius: 35px;
+    display: flex;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px 40px;
+    text-shadow: 1px 1px 5px #112f;
+    width: max-content;
+}
+.editarblog:hover {
+    background-color: #fb5;
+}
+.editarblog:active {
+    background-color: #f81;
+    color: #dde;
+}
+.blog {
+    background-color: #fff;
+    border-radius: 35px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    height: max-content;
+}
+.blog h1 {
+    background-color: #58a;
+    border-radius: 15px;
+    color: #fff;
+    padding: 10px ;
+}
+.blog * {
+    color: #037;
+    margin: 20px 10px;
+}
+.blog img {
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    width: fit-content
+}
+.contenedor-blog .btn_volver {
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    width: max-content;
+}

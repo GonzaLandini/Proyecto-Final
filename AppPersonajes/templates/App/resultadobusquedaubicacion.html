@@ -1,0 +1,20 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Resultados búsqueda</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Ubicaciones</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor_resultados">
+        <h2 class="tituloform">Resultado de Regiones</h2>
+        <ol class="listaresultados">
+            {% for region in regiones %}
+                <li><h3 class="resultados">{{ region.region }}</h3></li>
+            {% endfor %}
+        </ol>
+        <a class="btn_crearresultados" href="{% url 'ubicacionformulario' %}">CREAR NUEVA UBICACIóN</a>
+    </div>
+    <a class="btn_volver" href="{% url 'busqueda' %}">Volver a Buscar</a>
+{% endblock %}

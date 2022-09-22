@@ -1,0 +1,18 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Buscar compañero</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Escribí el nombre del compañero que quieras buscar</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <form class="contenido_formbuscar" action="{% url 'resultadobusquedacompañero' %}", method="GET"> {% csrf_token %}
+        <input class="rellenoform" type="text" placeholder="Escribir nombre" name="nombre" id="nombre">
+        <input class="submit" type="submit" value="Buscar">
+    </form>
+    {% if mensaje %}
+        <h3 class="mensaje-alerta-izq">{{ mensaje }}</h3>
+    {% endif %}
+    <a class="btn_volver" href="{% url 'busqueda' %}">Volver a Buscar</a>
+{% endblock %}

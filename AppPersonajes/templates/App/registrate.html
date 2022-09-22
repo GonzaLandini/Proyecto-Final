@@ -1,0 +1,29 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Registrar cuenta</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Registrate!</h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensaje %}
+        <h2 class="mensaje-alerta-medio">{{ mensaje }}</h2>
+    {% endif %}
+    <div class="contenedor-registro">
+        <form class="form-registro" action="{% url 'registrate' %}"  method="POST"> {% csrf_token %}
+            <div class="form">
+                {{ form.as_p }}
+            </div>
+            <div class="register-login">
+                <a href="{% url 'login' %}">Prefiero iniciar sesion</a>
+                <button class="submit" type="submit">Registrarse</button>
+            </div>
+        </form>
+        <p class="contenedor-info-registro">
+            Las personas que utilizan nuestro servicio pueden haber subido su información de contacto.<a href="#"> Leer más</a>.<br><br>
+            Al hacer clic en Registrarse, aceptás nuestros <a href="#"> Términos</a>, <a href="#"> Política de privacidad</a> y <a href="#"> Política de cookies</a>.<br>Podés recibir notificaciones por SMS de nosotros y podés optar por no participar en cualquier momento.
+        </p>
+    </div>
+    
+{% endblock %}

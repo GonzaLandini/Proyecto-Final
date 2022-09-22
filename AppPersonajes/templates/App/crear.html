@@ -1,0 +1,21 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - Crear</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">Seleccioná qué querés crear</h1>
+{% endblock %}
+{% block contenido_variable %}
+    <div class="contenedor_crear">
+        <div class="lista_crear">
+            <a class="btn_creaciones" href="{% url 'personajeformulario' %}">CREAR PERSONAJE</a></li>
+            <a class="btn_creaciones" href="{% url 'compañeroformulario' %}">CREAR COMPAÑERO</a></li>
+            <a class="btn_creaciones" href="{% url 'ubicacionformulario' %}">CREAR UBICACIÓN</a></li>
+        </div>
+        {% if mensajecorrecto %}
+            <h3 class="mensaje-correcto-medio">{{ mensajecorrecto }}</h3>
+        {% endif %}
+        <a class="btn_volver" href="{% url 'inicio' %}">Inicio</a>
+    </div>
+{% endblock %}

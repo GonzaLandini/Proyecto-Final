@@ -1,0 +1,26 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block titulo %}
+    <title>Final - {{ user.username }}/ Mensajes</title>
+{% endblock %}
+{% block titulo_de_pagina %}
+    <h1 class="titulotemplates">
+        {% if imagen %}
+            <div class="contenedor-img-perfil">
+                <img class="img-perfil" src="{{ imagen }}" alt="img-perfil" title="Foto perfil de {{ user.username }}">
+            </div>
+        {% endif %}{{ user.username }} - Enviar mensajes
+    </h1>
+{% endblock %}
+{% block contenido_variable %}
+    {% if mensajeerror %}
+        <h2 class="mensaje-alerta-izq">{{ mensajeerror }}</h2>
+    {% endif %}
+    <div class="contenedor-mensajes">
+        <form class="form-mensajes" action="{% url 'mensajes' %}" method="POST"> {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit" type="submit">Enviar</button>
+            <a class="btn_volver" href="{% url 'perfil' %}">Volver</a>
+        </form>
+    </div>
+{% endblock %}
